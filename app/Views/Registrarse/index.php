@@ -5,62 +5,244 @@ $fecha = date("Y-m-d");
 <?= $this->extend('Layout/ClienteDash'); ?>
 <?= $this->section('contenido') ?>
 
-<div class="container">
-
-    <form method="POST" action="<?php echo base_url() . '/Registrarse/crear' ?>">
-        <div class="row">
-            <div class="col-6">
-                <div>
-                    <label for="razon_social">Razon Social</label>
-                    <input type="text" name="razon_social" id="razon_social" class="form-control">
-                </div>
-                <div>
-                    <label for="abreviatura">Abreviatura</label>
-                    <input type="text" name="abreviatura" id="abreviatura" class="form-control">
-                </div>
-                <div>
-                    <label for="RUC_ciente">RUC del cliente</label>
-                    <input type="number" name="RUC_cliente" id="RUC_cliente" class="form-control">
-                </div>
-                <div>
-                    <label for="celular_cliente">Celular</label>
-                    <input type="number" name="celular_cliente" id="celular_cliente" class="form-control">
-                </div>
-                <div>
-                    <label for="telefono_cliente">Telefono ciente</label>
-                    <input type="number" name="telefono_cliente" id="telefono_cliente" class="form-control">
-                </div>
+<div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+            class="tab">Registrarse</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label hidden for="tab-2" class="tab"></label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <form method="post" action="<?php echo base_url() . '/Registrarse/crear' ?>">
+                    <div class="contenedor">
+                    <div>
+                        <div class="group">
+                            <label class="label">Razon Social</label>
+                            <input type="text" name="razon_social" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Abreviatura</label>
+                            <input type="text" name="abreviatura" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Ruc del cliente</label>
+                            <input type="number" name="RUC_cliente" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Celular cliente</label>
+                            <input type="number" name="celular_cliente" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Telefono cliente</label>
+                            <input type="number" name="telefono_cliente" class="input" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="group">
+                            <label class="label">Localizacion</label>
+                            <input type="text" name="localizacion" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Email</label>
+                            <input type="email" name="email_cliente" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Usuario</label>
+                            <input type="text" name="usuario" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Contraseña</label>
+                            <input type="password" name="contraseña" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Fecha</label>
+                            <input type="date" name="fecha" class="input" />
+                        </div>
+                        <div class="group">
+                            <label class="label">Numero de clientes</label>
+                            <input type="text" name="numero_clientes" class="input" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Registrarse">
+                    </div>
+                </form>
             </div>
-            <div class="col-6">
-                <div>
-                    <label for="localizacion">Localizacion</label>
-                    <input type="text" name="localizacion" id="localizacion" class="form-control">
-                </div>
-                <div>
-                    <label for="email_cliente">Email del cliente</label>
-                    <input type="email" name="email_cliente" id="email_cliente" class="form-control">
-                </div>
-                <div>
-                    <label for="usuario">Usuario</label>
-                    <input type="text" name="usuario" id="usuario" class="form-control">
-                </div>
-                <div>
-                    <label for="contraseña">Contraseña</label>
-                    <input type="password" name="contraseña" id="contraseña" class="form-control">
-                </div>
-                <div>
-                    <label for="fecha">Fecha</label>
-                    <input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo $fecha ?>">
-                </div>
-                <div>
-                    <label for="numero_clientes">Numero de clientes</label>
-                    <input type="text" name="numero_clientes" id="numero_clientes" class="form-control">
-                </div>
-            </div>
-        </div><br>
-        <button class="btn btn-warning">Registrar</button>
-    </form>
+        </div>
+    </div>
 </div>
+
+<style>
+    body {
+        margin: 0;
+        color: #6a6f8c;
+    }
+    *,
+    :after,
+    :before {
+        box-sizing: border-box
+    }
+    .clearfix:after,
+    .clearfix:before {
+        content: '';
+        display: table
+    }
+    .clearfix:after {
+        clear: both;
+        display: block
+    }
+    a {
+        color: inherit;
+        text-decoration: none
+    }
+    .login-wrap {
+        font: 600 16px/18px 'Open Sans', sans-serif;
+        width: 100%;
+        margin: auto;
+        max-width: 525px;
+        min-height: 670px;
+        position: relative;
+        background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+    }
+    .login-html {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: 90px 70px 50px 70px;
+        background: rgba(184, 135, 11, 0.69)
+    }
+    .login-html .sign-in-htm,
+    .login-html .sign-up-htm {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        transition: all .4s linear;
+    }
+    .login-html .sign-in,
+    .login-html .sign-up,
+    .login-form .group .check {
+        display: none;
+    }
+    .login-html .tab,
+    .login-form .group .label,
+    .login-form .group .button {
+        text-transform: uppercase;
+    }
+    .login-html .tab {
+        font-size: 22px;
+        margin-right: 15px;
+        padding-bottom: 5px;
+        margin: 0 15px 10px 0;
+        display: inline-block;
+        border-bottom: 2px solid transparent;
+    }
+    .login-html .sign-in:checked+.tab,
+    .login-html .sign-up:checked+.tab {
+        color: #000;
+        border-color: #b8860b;
+    }
+    .login-form {
+        min-height: 345px;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+    .login-form .group {
+        margin-bottom: 15px;
+    }
+    .login-form .group .label,
+    .login-form .group .input,
+    .login-form .group .button {
+        width: 100%;
+        color: #000;
+        display: block;
+    }
+    .login-form .group .input,
+    .login-form .group .button {
+        border: none;
+        padding: 15px 20px;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.295);
+    }
+    .login-form .group input[data-type="password"] {
+        -webkit-text-security: circle;
+    }
+    .login-form .group .label {
+        color: #000;
+        font-size: 12px;
+    }
+    .login-form .group .button {
+        background: #b8860b;
+    }
+    .login-form .group label .icon {
+        width: 15px;
+        height: 15px;
+        border-radius: 2px;
+        position: relative;
+        display: inline-block;
+        background: rgba(255, 255, 255, .1);
+    }
+    .login-form .group label .icon:before,
+    .login-form .group label .icon:after {
+        content: '';
+        width: 10px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        transition: all .2s ease-in-out 0s;
+    }
+    .login-form .group label .icon:before {
+        left: 3px;
+        width: 5px;
+        bottom: 6px;
+        transform: scale(0) rotate(0);
+    }
+    .login-form .group label .icon:after {
+        top: 6px;
+        right: 0;
+        transform: scale(0) rotate(0);
+    }
+    .login-form .group .check:checked+label {
+        color: #fff;
+    }
+    .login-form .group .check:checked+label .icon {
+        background: #b8860b;
+    }
+    .login-form .group .check:checked+label .icon:before {
+        transform: scale(1) rotate(45deg);
+    }
+    .login-form .group .check:checked+label .icon:after {
+        transform: scale(1) rotate(-45deg);
+    }
+    .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
+        transform: rotate(0);
+    }
+    .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
+        transform: rotate(0);
+    }
+    .hr {
+        height: 2px;
+        margin: 60px 0 50px 0;
+        background: rgba(255, 255, 255, .2);
+    }
+    .foot-lnk {
+        text-align: center;
+    }
+    input:focus {
+        outline: none !important;
+        border: 1px solid;
+        box-shadow: 0 0 10px;
+    }
+    .contenedor{
+        display: flex;
+    }
+</style>
+
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">

@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/adm', 'LogindmController::index');
 $routes->post('adm/login', 'LogindmController::login');
+$routes->get('adm/salir', 'LogindmController::salir');
 
 $routes->get('/AgrupMenu', 'AgrupMenuController::index');
 $routes->get('/AgrupMenu/editar/(:any)', 'AgrupMenuController::editar/$1');
@@ -241,10 +242,22 @@ $routes->get('/Diccionario/obtener/(:any)', 'DiccionarioController::obtener/$1')
 $routes->post('/Diccionario/actualizar', 'DiccionarioController::actualizar');
 $routes->get('/Diccionario/eliminar/(:any)', 'DiccionarioController::eliminar/$1');
 
-$routes->get('Cliente/Registrarse', 'RegistrarseController::index');
+$routes->get('/Registrarse', 'RegistrarseController::index');
 $routes->post('/Registrarse/crear', 'RegistrarseController::crear');
 
+
 $routes->get('/Personal', 'DetalleClienteController::indexPersonal');
+
+$routes->get('/SubirArchivo', 'SubirArchivoController::index');
+$routes->post('/SubirArchivo/cargar_archivos', 'SubirArchivoController::cargar_archivos');
+
+// TipoAgrupamiento routes
+$routes->get('/Favoritos', 'FavoritosController::index');
+// crud de TipoAgrupamiento
+$routes->post('/Favoritos/crear', 'FavoritosController::crear');
+$routes->get('/Favoritos/obtener/(:any)', 'FavoritosController::obtener/$1');
+$routes->post('/Favoritos/actualizar', 'FavoritosController::actualizar');
+$routes->get('/Favoritos/eliminar/(:any)', 'FavoritosController::eliminar/$1');
 
 /*
  * --------------------------------------------------------------------
