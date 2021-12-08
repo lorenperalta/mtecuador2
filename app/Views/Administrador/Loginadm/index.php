@@ -18,14 +18,13 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="usuario" name="usuario">
-						
+						<input type="text" class="form-control" placeholder="Usuario" name="Usuario">
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="Password" name="Password" class="form-control" placeholder="Password">
+						<input type="password" class="form-control" placeholder="Password" name="Password">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me

@@ -48,19 +48,25 @@
       </div>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <?php
-          if (session('usuario') != '') {
-          ?>
-            <a class="nav-link" href="#"><?php echo session('usuario'); ?></a>
-          <?php } else {
-          ?>
+          <?php if (session('usuario') != '') { ?>
+            <!-- se muestra el nombre del usuario -->
+            <!-- <a class="nav-link" href="#"><?php echo session('usuario'); ?></a> -->
+            <a class="nav-link" href="#">Perfil</a>
+          <?php } else { ?>
             <a class="nav-link" href="<?php echo base_url('/Login/ingresar') ?>">iniciar sesion</a>
           <?php
           }
           ?>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url('/Registrarse') ?>">Registrarse</a>
+          <?php 
+          if(session('usuario') != ''){ ?>
+            <a class="nav-link" href="<?php echo base_url('/Login/salir') ?>">Salir</a>
+          <?php 
+          } else { ?>
+            <a class="nav-link" href="<?php echo base_url('/Registrarse') ?>">Registrarse</a>
+          <?php 
+          } ?>
         </li>
       </ul>
     </div>

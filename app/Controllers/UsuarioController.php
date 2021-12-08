@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
  use App\Models\Usuario;
  use App\Libraries\Hash;
+ 
 class UsuarioController extends BaseController{
     public function index(){
         $usuario = new Usuario();
