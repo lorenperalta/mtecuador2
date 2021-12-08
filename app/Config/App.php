@@ -23,7 +23,9 @@ class App extends BaseConfig
      *
      * @var string
      */
+
     public $baseURL = 'http://localhost/mtecuador2/';
+
 
     /**
      * --------------------------------------------------------------------------

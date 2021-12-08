@@ -90,7 +90,7 @@ $Cap = "";
 $Sec = "";
 $Par = "";
 $ar = "";
-
+$dudis="";
 ?>
 
 <div class="card">
@@ -245,8 +245,24 @@ $ar = "";
                     </div>
                     <div class="chart tab-pane" id="List-Disposiciones" style="position: relative; height: 300px;">
                     <?php foreach ($dbd as $key) : ?>
-                        <h1><?php echo $key->TipoDisposicion ?><br></h1>
-                         <?php echo $key->ContenidoDisposicion ?>
+                        
+                        <?php  if($dudis != $key->TipoDisposicion){
+                             ?>
+                                <h5><?php echo $key->TipoDisposicion ?><br></h5>
+                                <?php $dudis=$key->TipoDisposicion; 
+                                } ?>
+                                <div class="row">
+                                    <div class="col-3">
+                                    <div class="contenido_exp" contentindex="0c" style="display: block;">
+                                        <?php  echo to_ordinal_F($key->NoDisposicion).':  '?>
+                                    </div>
+                                    </div>
+                                    <div class="col-9">
+                                    <div class="contenido_exp" contentindex="0c" style="display: block;">
+                                        <?php  echo to_ordinal_F($key->ContenidoDisposicion)?>
+                                    </div>
+                                    </div>
+                                </div>
                        
                     <?php endforeach; ?>
                     </div>
