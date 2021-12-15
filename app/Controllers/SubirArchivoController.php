@@ -16,9 +16,9 @@ class SubirArchivoController extends BaseController {
 
         if ($file->isValid()) {
             $file-> move('uploads');
-			return redirect()->to('/Administrador/SubirArchivo')->with('mensaje','1');
+            return redirect()->to(base_url().'/Administrador/SubirArchivo')->with('mensaje','1');
 		} else {
-			return redirect()->to('/Administrador/SubirArchivo')->with('mensaje','0');
+            return redirect()->to(base_url().'/Administrador/SubirArchivo')->with('mensaje','0');
 		}
     }
 }
