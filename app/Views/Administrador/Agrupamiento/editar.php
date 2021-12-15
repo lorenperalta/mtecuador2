@@ -1,11 +1,10 @@
 <?php
- $id = $datos[0]['id'];
- $id_usuario = $datos[0]['id_usuario'];
- $Nombre = $datos[0]['Nombre'];
- $Descripcion = $datos[0]['Descripcion'];
+ $idAgrupamiento = $datos[0]['idAgrupamiento'];
+ $NombreAgrupamiento = $datos[0]['NombreAgrupamiento'];
+ $DescripcionAgrupamiento = $datos[0]['DescripcionAgrupamiento'];
+ $TipoAgrup = $datos[0]['TipoAgrup'];
  $Precio = $datos[0]['Precio']; 
-
- 
+ $Imagen = $datos[0]['Imagen']; 
 ?>
 
 <?= $this->extend('Layout/Layout')?>
@@ -33,29 +32,33 @@
                     <div class="chart tab-pane active" id="revenue-chart"
                         style="position: relative; height: 300px;">
                         <form action="<?php echo base_url().'/Agrupamiento/actualizar'?>" method="post">
-        <div class="form-group text-left">
-           <input style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" id="id" name="id"  value="<?php echo $id ?>" class="form-control" hidden="" > 
-        </div>
-        <div class="form-group text-left">
-            <label for="Nombre" >Nombre</label>
-            <input style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" id="Nombre" name="Nombre"  value="<?php echo $Nombre ?>" class="form-control"> 
-        </div>
-        <div class="form-group text-left">
-            <label for="Descripcion">Descripcion</label>
-            <input style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" name="Descripcion" value="<?php echo $Descripcion ?>" class="form-control"> 
-            
-        </div>
-        <div class="form-group text-left">
-            <label for="Precio">Precio</label>
-            <input  style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" name="Precio" value="<?php echo $Precio ?>" class="form-control"> 
-            
-
-        </div>
-        <br>
-        <div class="form-group">
-            <button class="btn btn-warning">Enviar</button>
-        </div>
-    </form>
+                            <div class="form-group text-left">
+                            <input style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" name="idAgrupamiento"  value="<?php echo $idAgrupamiento ?>" class="form-control" hidden="" > 
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="NombreAgrupamiento" >Nombre de Agrupamiento</label>
+                                <input style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" name="NombreAgrupamiento"  value="<?php echo $NombreAgrupamiento ?>" class="form-control"> 
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="DescripcionAgrupamiento" >Descripcion de Agrupamiento</label>
+                                <input style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" name="DescripcionAgrupamiento"  value="<?php echo $DescripcionAgrupamiento ?>" class="form-control"> 
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="TipoAgrup">Tipo de Agrupamiento</label>
+                                <input style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" name="TipoAgrup" value="<?php echo $TipoAgrup ?>" class="form-control"> 
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="Precio">Precio</label>
+                                <input  style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="number" step="0.01" name="Precio" value="<?php echo $Precio ?>" class="form-control"> 
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="Imagen">Imagen</label>
+                                <input  style="border:none; border-bottom: 1px solid #ffc107; box-shadow: none;" type="text" name="Imagen" value="<?php echo $Imagen ?>" class="form-control"> 
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-warning">Enviar</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
                    

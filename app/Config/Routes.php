@@ -259,6 +259,8 @@ $routes->get('/Favoritos/obtener/(:any)', 'FavoritosController::obtener/$1');
 $routes->post('/Favoritos/actualizar', 'FavoritosController::actualizar');
 $routes->get('/Favoritos/eliminar/(:any)', 'FavoritosController::eliminar/$1');
 
+$routes->get('/Servicios', 'AgrupamientoController::servicios');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
